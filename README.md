@@ -1,150 +1,228 @@
-# TalentPulse AI - Next-Generation Talent Intelligence & Candidate Ranking Platform
+# 🧠 TalentPulse AI
 
-> *"We don't just identify the best candidate today—we predict the best hire for tomorrow."*
+> **AI-Assisted Candidate Ranking for Smarter Hiring**
 
-TalentPulse AI is an AI-powered Recruiter Copilot that solves the limitations of traditional ATS platforms. Instead of relying solely on keyword matching and fixed years of experience, it uses semantic understanding, multi-signal evaluations, and future-potential prediction to discover high-potential talent.
-
----
-
-## Core Innovations
-
-### 1. Learning Velocity Score (10%)
-Traditional ATS platforms look at static skills. TalentPulse AI tracks **skill evolution** over the candidate's professional timeline, mapping when tools and libraries were acquired. Continual learning and recent adoptions are highly weighted:
-$$\text{Learning Velocity} = \text{Unique Years in Timeline} \times 10 + \text{Recent Tech Adoptions (2025-2026)} \times 10 + \text{Baseline} (40)$$
-
-### 2. Potential-to-Hire Score (10%)
-Predicts the candidate's growth trajectory and future value tomorrow compared to today:
-$$\text{Potential-to-Hire} = (0.4 \times \text{Learning Velocity}) + (0.3 \times \text{Career Growth}) + (0.3 \times \text{Skill Freshness})$$
-
-### 3. Candidate Digital Twin
-Generates a recruiter-friendly, memorable archetype (e.g. *Emerging Technical Leader*, *Deep Domain Specialist*) listing concise key strengths, weaknesses/growth areas, and a concrete career forecast (e.g., *Ready to transition to Tech Lead in 12 months*).
-
-### 4. Interactive What-If Simulator
-A real-time sliding sandbox allowing recruiters to dynamically shift criteria weights, override required must-have skills, or filter by years of experience and seniority. The candidate rankings slide and re-order instantly with visual indicators showing rank movements (Up/Down).
+TalentPulse AI is an AI-powered recruitment assistant that helps recruiters evaluate candidates by analyzing job descriptions and resumes using AI. It generates explainable candidate rankings based on multiple evaluation factors instead of relying only on keyword matching.
 
 ---
 
-## Tech Stack
+## 📖 Overview
 
-* **Frontend**: Next.js 14 App Router, TypeScript, Tailwind CSS v4, Recharts, Lucide Icons
-* **Backend**: FastAPI (Python), SQLite (SQLAlchemy), Qdrant Client (In-memory serverless mode)
-* **ML/NLP**: PDF text extraction (`pypdf`), semantic similarity and keyword mapping, LLM API gateway (OpenAI GPT-4o / Gemini 1.5 Flash compatible, with an offline heuristic fallback)
+Recruiters often receive hundreds of resumes for a single job opening. Traditional Applicant Tracking Systems (ATS) primarily rely on keyword matching, which may overlook qualified candidates with relevant skills expressed differently.
+
+TalentPulse AI addresses this challenge by combining AI-powered document understanding with a transparent scoring system that considers multiple aspects of a candidate's profile.
 
 ---
 
-## Project Structure
+## ✨ Features
 
-```text
+- 📄 Intelligent Job Description Analysis
+- 📑 Resume Parsing and Information Extraction
+- 🤖 AI-Assisted Candidate Evaluation
+- 📊 Explainable Candidate Ranking
+- 🎛️ Interactive What-If Simulator
+- 📈 Learning Velocity Assessment
+- ⭐ Potential-to-Hire Score
+- 🔍 Skill Gap Analysis
+
+---
+
+## 🚀 Workflow
+
+```
+Recruiter Uploads Job Description
+            │
+            ▼
+      AI Extracts Requirements
+            │
+            ▼
+     Candidate Resume Upload
+            │
+            ▼
+      Resume Information Parser
+            │
+            ▼
+     Candidate Feature Extraction
+            │
+            ▼
+       Multi-Factor Scoring
+            │
+            ▼
+      Candidate Ranking Dashboard
+            │
+            ▼
+      What-If Simulation
+```
+
+---
+
+## 📊 Candidate Evaluation
+
+TalentPulse AI evaluates candidates using multiple signals including:
+
+- Semantic Skill Match
+- Experience Relevance
+- Career Growth
+- Learning Velocity
+- Skill Freshness
+- Project Impact
+- Behavioral Indicators
+- Risk Factors
+
+The final recommendation is generated using a weighted scoring model to provide transparent and explainable results.
+
+---
+
+## 🎛️ What-If Simulator
+
+Recruiters can customize hiring priorities by adjusting the weight of different evaluation criteria such as:
+
+- Skills
+- Experience
+- Learning Velocity
+- Project Impact
+
+Candidate rankings update instantly, allowing recruiters to explore different hiring strategies.
+
+---
+
+## 🛠️ Tech Stack
+
+### Frontend
+
+- Next.js
+- TypeScript
+- Tailwind CSS
+- Recharts
+
+### Backend
+
+- FastAPI
+- Python
+- SQLAlchemy
+- SQLite
+
+### AI & APIs
+
+- OpenAI API
+- Google Gemini API
+- GitHub API
+
+---
+
+## 📷 Screenshots
+
+### Upload Hub
+
+Upload Job Description and Candidate Resumes.
+
+![Upload Hub](./screenshots/upload.png)
+
+---
+
+### Talent Rankings
+
+AI-generated candidate rankings with explainable scores.
+
+![Talent Rankings](./screenshots/ranking.png)
+
+---
+
+### What-If Simulator
+
+Adjust evaluation criteria and compare candidate rankings in real time.
+
+![What If Simulator](./screenshots/simulator.png)
+
+---
+
+## 📂 Project Structure
+
+```
+TalentPulse-AI/
+│
+├── frontend/
+│   ├── app/
+│   ├── components/
+│   ├── public/
+│   └── package.json
+│
 ├── backend/
 │   ├── app/
-│   │   ├── __init__.py
-│   │   ├── database.py       # SQLite connection & SQLAlchemy setup
-│   │   ├── models.py         # Relational database models
-│   │   ├── main.py           # FastAPI endpoints & CORS
-│   │   └── services/
-│   │       ├── __init__.py
-│   │       ├── parser.py     # PDF text extractor & resume/JD parser
-│   │       └── ai_engine.py  # Multi-signal scoring & Digital Twin generator
-│   ├── tests/
-│   │   └── test_scoring.py   # Python test suite for evaluations
-│   └── requirements.txt      # Python dependencies
-├── src/
-│   └── app/
-│       ├── page.tsx          # Main React dashboard & What-If simulator
-│       ├── layout.tsx        # Next.js layout & Outfit/Inter fonts
-│       └── globals.css       # Deep-space glassmorphism styles
-├── package.json
-└── tsconfig.json
+│   ├── models/
+│   ├── services/
+│   ├── database.py
+│   └── main.py
+│
+├── screenshots/
+├── README.md
+└── requirements.txt
 ```
 
 ---
 
-## Getting Started
+## ⚙️ Installation
 
-### 1. Start the FastAPI Backend
-Ensure you have Python installed, then set up the virtual environment and install packages:
+### Clone Repository
 
 ```bash
-# Navigate to the backend directory
-cd backend
-
-# Create a virtual environment
-python -m venv venv
-
-# Activate venv (Windows)
-.\venv\Scripts\activate
-
-# Install dependencies
-pip install -r requirements.txt
-
-# Start the server (runs on port 8000)
-uvicorn app.main:app --reload
+git clone https://github.com/your-username/TalentPulse-AI.git
 ```
 
-*Note: You can add `OPENAI_API_KEY` or `GEMINI_API_KEY` to your environment variables to enable full LLM parsing. If omitted, the backend automatically runs in offline heuristic mode.*
-
----
-
-### 2. Start the Next.js Frontend
-From the root workspace folder, install node modules and start the dev server:
+### Frontend
 
 ```bash
-# Install NPM dependencies
+cd frontend
 npm install
-
-# Start the dev server (runs on port 3000)
 npm run dev
 ```
 
-*Note: The frontend has a dual-mode client API wrapper. If the FastAPI backend is offline, the interface will automatically switch to a **Local AI Engine** using rich simulated mock states, ensuring the dashboard is 100% interactive and functional out-of-the-box!*
-
----
-
-## Running Backend Tests
-To verify the multi-signal mathematical formulas:
+### Backend
 
 ```bash
 cd backend
-.\venv\Scripts\python .\tests\test_scoring.py
+
+python -m venv venv
+
+# Windows
+venv\Scripts\activate
+
+# Linux/macOS
+source venv/bin/activate
+
+pip install -r requirements.txt
+
+uvicorn main:app --reload
 ```
 
 ---
 
-## Deploying (Vercel frontend + Render backend)
+## 🎯 Future Improvements
 
-Follow these quick steps to deploy the app using Vercel (frontend) and Render (backend).
+- Interview Question Generation
+- AI Resume Feedback
+- Team Compatibility Analysis
+- Recruiter Analytics Dashboard
+- Integration with Additional Professional Platforms
 
-### 1) Deploy Frontend to Vercel
-1. Go to https://vercel.com and sign in with GitHub.
-2. Click "New Project" and select the `sayali2327/TalentPulse-AI` repository.
-3. Vercel will auto-detect Next.js — click Deploy.
-4. After deploy, go to Project Settings → Environment Variables and add:
-	- `NEXT_PUBLIC_API_URL` = `https://<your-render-backend-url>`
+---
 
-### 2) Deploy Backend to Render
-1. Go to https://render.com and sign in with GitHub.
-2. Create a new **Web Service** and connect the `sayali2327/TalentPulse-AI` repo.
-3. Use branch `master` (or your chosen branch).
-4. Set runtime to `Python 3.11`.
-5. Set the **Build Command** to:
+## 👥 Team
 
-```bash
-pip install -r backend/requirements.txt
-```
+Developed as part of a National-Level Hackathon project to explore AI-assisted candidate screening and explainable recruitment workflows.
 
-6. Set the **Start Command** to:
+---
 
-```bash
-cd backend && uvicorn app.main:app --host 0.0.0.0 --port $PORT
-```
+## 📄 License
 
-7. (Optional) Add environment variables on Render, e.g. `DATABASE_URL`, `OPENAI_API_KEY`, `GITHUB_TOKEN`.
-8. Deploy and wait for the service URL (e.g., `https://talentpulse-backend.onrender.com`).
+This project is developed for educational and hackathon purposes.
 
-9. Update `NEXT_PUBLIC_API_URL` in Vercel with the Render backend URL and redeploy the frontend.
+---
 
-### Notes & Troubleshooting
-- A sample `render.yaml` and `backend/Procfile` were added to this repository to simplify Render setup.
-- If you need OAuth credentials for LinkedIn or GitHub, add them as secure environment variables on Render.
-- For production, consider using a managed DB instead of the default SQLite file.
+## ⭐ Acknowledgements
 
+- OpenAI
+- Google Gemini
+- FastAPI
+- Next.js
+- Tailwind CSS
