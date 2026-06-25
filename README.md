@@ -116,7 +116,7 @@ Candidate rankings update instantly, allowing recruiters to explore different hi
 
 Upload Job Description and Candidate Resumes.
 
-![Upload Hub](./screenshots/upload.png)
+![Upload Hub](./screenshots/Screenshot 2026-06-25 153531.png)
 
 ---
 
