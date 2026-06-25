@@ -1,0 +1,15 @@
+# Render service specification (example). Review and adjust region/plan as needed.
+services:
+  - type: web
+    name: talentpulse-backend
+    env: python
+    region: oregon
+    plan: free
+    repo: sayali2327/TalentPulse-AI
+    branch: master
+    buildCommand: pip install -r backend/requirements.txt
+    startCommand: cd backend && uvicorn app.main:app --host 0.0.0.0 --port $PORT
+    envVars:
+      - key: DATABASE_URL
+        value: sqlite:///data.db
+        sync: false

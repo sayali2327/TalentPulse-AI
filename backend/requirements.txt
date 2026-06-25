@@ -1,0 +1,11 @@
+fastapi
+uvicorn
+sqlalchemy
+pydantic
+python-multipart
+qdrant-client
+pypdf
+numpy
+python-dotenv
+requests
+pandas
