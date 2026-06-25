@@ -116,7 +116,7 @@ Candidate rankings update instantly, allowing recruiters to explore different hi
 
 Upload Job Description and Candidate Resumes.
 
-![Upload Hub](./screenshots/Screenshot 2026-06-25 153531.png)
+![Upload Hub](./screenshots/upload.png)
 
 ---
 
@@ -166,7 +166,7 @@ TalentPulse-AI/
 ### Clone Repository
 
 ```bash
-git clone https://github.com/your-username/TalentPulse-AI.git
+git clone https://github.com/sayali2327/TalentPulse-AI.git
 ```
 
 ### Frontend
