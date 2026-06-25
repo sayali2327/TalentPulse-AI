@@ -2,7 +2,7 @@ name: Trigger Render Deploy for Backend
 
 on:
   push:
-    branches: [ master ]
+    branches: [ main ]
 
 jobs:
   trigger-render:
